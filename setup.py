@@ -44,7 +44,6 @@ if hasSetuptools:
             'wsdl2dispatch = ZSI.generate.commands:wsdl2dispatch',
         ],
     }
-    additional_params['install_requires'] = [ "PyXML >= 0.8.3", ]
     additional_params['setup_requires'] = [ "setuptools >= 0.6c3", ]
     additional_params['dependency_links'] = [
         "http://sourceforge.net/project/showfiles.php?group_id=6473&package_id=6541&release_id=286213",
@@ -53,11 +52,11 @@ else:
     additional_params['scripts'] = ["scripts/wsdl2py", "scripts/wsdl2dispatch"]
 
 setup(
-    name="m3-ZSI",
+    name="chevah-ZSI",
     version=_version,
     license="Python",
     packages=_packages,
-    description="Zolera SOAP Infrastructure",
+    description="Chevah fork of Zolera SOAP Infrastructure",
     author="Rich Salz, et al",
     author_email="rsalz@datapower.com",
     maintainer="Rich Salz, et al",

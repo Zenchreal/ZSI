@@ -2,6 +2,12 @@
 The Zolera SOAP Infrastructure
 ==============================
 
+This is the m3-ZSI modified to not depend on pyXML.
+
+
+Original Content
+================
+
 ZSI, the Zolera SOAP Infrastructure, is a pure-Python module that
 provides an implementation of SOAP messaging, as described in SOAP 1.1
 Specification (see http://www.w3.org/TR/soap).  It can also be used to
