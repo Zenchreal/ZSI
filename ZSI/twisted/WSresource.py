@@ -9,7 +9,7 @@ import sys, warnings
 # twisted & related imports
 from zope.interface import classProvides, implements, Interface
 from twisted.python import log, failure
-from twisted.web.error import NoResource
+from twisted.web.resource import NoResource
 from twisted.web.server import NOT_DONE_YET
 import twisted.web.http
 import twisted.web.resource
@@ -253,13 +253,7 @@ class DefaultHandlerChainFactory:
         return cls.protocol(DefaultCallbackHandler, DataHandler)
     
 
-class WSAddressHandlerChainFactory:
-    protocol = DefaultHandlerChain
-    
-    @classmethod
-    def newInstance(cls):
-        return cls.protocol(WSAddressCallbackHandler, DataHandler, 
-            WSAddressHandler())
+
 
 
 class WSResource(twisted.web.resource.Resource, object):
@@ -358,3 +352,10 @@ class DefaultHandlerChain:
         
         return s
 
+class WSAddressHandlerChainFactory:
+    protocol = DefaultHandlerChain
+    
+    @classmethod
+    def newInstance(cls):
+        return cls.protocol(WSAddressCallbackHandler, DataHandler, 
+            WSAddressHandler())
